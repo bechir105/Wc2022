@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Equipe" representedClassName="Equipe" syncable="YES" codeGenerationType="class">
+        <attribute name="continent" optional="YES" attributeType="String"/>
+        <attribute name="nom" optional="YES" attributeType="String"/>
+        <attribute name="pot" optional="YES" attributeType="String"/>
+        <relationship name="groupe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Groupe" inverseName="equipes" inverseEntity="Groupe"/>
+    </entity>
+    <entity name="Groupe" representedClassName="Groupe" syncable="YES" codeGenerationType="class">
+        <attribute name="nom" optional="YES" attributeType="String"/>
+        <attribute name="tirage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="equipes" optional="YES" toMany="YES" maxCount="4" deletionRule="Nullify" destinationEntity="Equipe" inverseName="groupe" inverseEntity="Equipe"/>
+    </entity>
 </model>
